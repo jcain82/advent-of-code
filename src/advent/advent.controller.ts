@@ -12,9 +12,7 @@ export class AdventController {
     @Param('day') day: string,
     @Query('input') input: string,
   ) {
-    // Year-specific logic is handled in the appropriate service
     const yearService = this.getYearService(year);
-    console.log(`solveDay${day}`);
     const result = yearService[`solveDay${day}`](input);
 
     return { year, day, result };
